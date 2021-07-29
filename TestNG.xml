@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Yemeksepeti Test Suite" >
+    <listeners>
+        <listener class-name="utils.listeners.TestListener"/>
+        <listener class-name="utils.listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <test name="ChromeTest" thread-count="1" parallel="methods">
+        <parameter name="browser" value="Chrome" />
+        <classes>
+            <class name="tests.LoginTests"/>
+        </classes>
+    </test>
+
+
+    <test name="FirefoxTest" thread-count="1" parallel="methods">
+        <parameter name="browser" value="Firefox" />
+        <classes>
+            <class name="tests.LoginTests"/>
+        </classes>
+    </test>
+
+    <test name="EdgeTest" thread-count="1" parallel="methods">
+        <parameter name="browser" value="Edge" />
+        <classes>
+            <class name="tests.LoginTests"/>
+        </classes>
+    </test>
+</suite>
