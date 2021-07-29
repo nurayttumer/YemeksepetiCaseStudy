@@ -14,7 +14,7 @@ raporlanmalı.
 
 ## ---------------------------- Proje çalıştırma -----------------------------------
 
-- Proje çekildikten sonra Ide üzerinde açılır
+- Proje çekildikten sonra IDE üzerinde açılır
 - mvn test commandı terminalden çalıştırılır.
 - Fail senaryolar olduğu isterlerden görülecektir. 
 - Projenin çekildiği path üzerinde extent-reports klasörü olduğu görülecektir. 
