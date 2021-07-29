@@ -1,8 +1,5 @@
 package pages;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,13 +7,19 @@ import org.openqa.selenium.WebElement;
 import utils.logs.JSErrorLogs;
 import utils.logs.Log;
 
+import static org.testng.AssertJUnit.*;
+
 public class LoginPage extends BasePage {
-    /**Constructor*/
+    /**
+     * Constructor
+     */
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    /**Web Elements*/
+    /**
+     * Web Elements
+     */
     By userNameId = By.id("UserName");
     By passwordId = By.id("password");
     By loginButtonId = By.id("ys-fastlogin-button");
@@ -32,7 +35,9 @@ public class LoginPage extends BasePage {
     By allAreas = By.xpath("//*[contains(@id,'all-regions')]");
 
 
-    /**Page Methods*/
+    /**
+     * Page Methods
+     */
     public LoginPage loginToYemeksepeti(String username, String password) {
         Log.info("Trying to login the Yemeksepeti.");
         writeText(userNameId, username);
@@ -55,28 +60,32 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage verifyEmptyUserNameMessage(String expectedMessage){
+    public LoginPage verifyEmptyUserNameMessage(String expectedMessage) {
         Log.info("Verifying login credentials.");
         waitVisibility(emptyUserErrorMessage);
         assertEquals(readText(emptyUserErrorMessage), expectedMessage);
         return this;
     }
 
-    public LoginPage verifyEmptyPassMessage(String expectedMessage){
+    public LoginPage verifyEmptyPassMessage(String expectedMessage) {
         Log.info("Verifying login credentials.");
         waitVisibility(emptyPassErrorMessage);
         assertEquals(readText(emptyPassErrorMessage), expectedMessage);
         return this;
     }
 
+    public LoginPage failScenario() {
+        fail();
+        return this;
+    }
 
-    public LoginPage myFavoritePage()  {
-       Log.info("Opening my favorite restaurant list");
+    public LoginPage myFavoritePage() {
+        Log.info("Opening my favorite restaurant list");
         WebElement chooseArea = driver.findElement(By.xpath("//*[contains(@id,'ys-areaSelector-container')]"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", chooseArea);
         WebElement element = driver.findElement(By.xpath("//span[@role='presentation']"));
-        executor.executeScript("arguments[0].click();",element);
+        executor.executeScript("arguments[0].click();", element);
 
         return this;
     }

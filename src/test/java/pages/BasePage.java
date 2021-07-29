@@ -12,9 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-    public static int IMPLICITYLY_WAIT =5;
+    public static int IMPLICITYLY_WAIT = 5;
 
-    public WebDriver     driver;
+    public WebDriver driver;
     public WebDriverWait wait;
 
     //Constructor
@@ -46,9 +46,11 @@ public class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    public static int getRandomInteger(int maximum, int minimum){ return ((int) (Math.random()*(maximum - minimum))) + minimum; }
+    public static int getRandomInteger(int maximum, int minimum) {
+        return ((int) (Math.random() * (maximum - minimum))) + minimum;
+    }
 
-    public void hoverElement(WebElement element){
+    public void hoverElement(WebElement element) {
         Actions hover = new Actions(driver);
         hover.moveToElement(element);
         hover.build();

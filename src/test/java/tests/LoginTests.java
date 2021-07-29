@@ -171,12 +171,27 @@ public class LoginTests extends BaseTest {
     @Description("Test Description: Login test with correct username and correct password.")
     @Story("Correct username and correct password login test")
     public void validLoginTest_CorrectUserNameCorrectPassword(Method method) {
-        startTest(method.getName(), "Invalid Login Scenario with correct username and correct password.");
+        startTest(method.getName(), "Valid Login Scenario with correct username and correct password.");
 
         homePage
                 .goToYemeksepeti()
                 .goToLoginPage()
                 .loginToYemeksepeti("tumer.nuray@gmail.com", "12nT**12");
+        driver.manage().deleteAllCookies();
+
+    }
+
+    @Test(priority = 11, description = "FailScenario")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Test Description: Login test FailScenario")
+    @Story("Fail Scenario")
+    public void validLoginTest_FailScenario(Method method) {
+        startTest(method.getName(), "FailScenario");
+
+        homePage
+                .goToYemeksepeti()
+                .goToLoginPage()
+                .failScenario();
         driver.manage().deleteAllCookies();
 
     }

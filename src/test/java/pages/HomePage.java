@@ -38,13 +38,13 @@ public class HomePage extends BasePage {
     //Go to LoginPage
     public LoginPage goToLoginPage() {
         List<WebElement> elementName = driver.findElements(By.cssSelector(".cityPlatesContainer .cityContainer .plateNo"));
-        int plateNo = getRandomInteger(80,0);
+        int plateNo = getRandomInteger(80, 0);
 
         int listsize = elementName.size();
         for (int i = 0; i < listsize; i++) {
-                elementName.get(plateNo).click();
-                break;
-            }
+            elementName.get(plateNo).click();
+            break;
+        }
 
         Log.info("Going to Login Page..");
         return new LoginPage(driver);
