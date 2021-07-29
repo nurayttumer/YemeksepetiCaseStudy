@@ -11,3 +11,14 @@ düşündüğün tüm testleri yazmanı bekliyoruz.
 - Sistem paralel ve crossbrowser olarak koşacak şekilde dizayn edilmeli.
 - Login testinde case’lerden biri fail olacak şekilde koşup, fail anının screenshot’ı
 raporlanmalı.
+
+## ---------------------------- Proje çalıştırma -----------------------------------
+
+- Proje çekildikten sonra Ide üzerinde açılır
+- mvn test commandı terminalden çalıştırılır.
+- Fail senaryolar olduğu isterlerden görülecektir. 
+- Projenin çekildiği path üzerinde extent-reports klasörü olduğu görülecektir. 
+- Run bitiminde bu klasör içindeki html açıldığında pass ve fail senaryolar görülecektir.
+- Fail senaryolar için screenshot’lar raporda eklidir. 
+- [Extent reports sayfa 1 screenshot](https://prnt.sc/1hgfrnh)
+- [Extent reports sayfa 2 screenshot](https://prnt.sc/1hggech)
