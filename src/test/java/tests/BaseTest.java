@@ -65,6 +65,12 @@ public class BaseTest {
         homePage = new HomePage(driver);
     }
 
+    @AfterMethod
+    public void methodLevelTeardown(){
+        driver.manage().deleteAllCookies();
+
+    }
+
     @AfterClass
     public void teardown() {
         Log.info("Tests are ending!");

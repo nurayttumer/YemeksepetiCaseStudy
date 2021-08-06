@@ -33,7 +33,6 @@ public class LoginTests extends BaseTest {
                 .loginToYemeksepeti("", "")
                 .verifyEmptyUserNameMessage("Lütfen kullanıcı adınızı/e-postanızı giriniz.")
                 .verifyEmptyPassMessage("Lütfen şifrenizi giriniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -49,7 +48,6 @@ public class LoginTests extends BaseTest {
             .goToLoginPage()
             .loginToYemeksepeti("tumer.nura@gmail.com", "11122233444")
             .verifyErrorMessage("Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -65,7 +63,6 @@ public class LoginTests extends BaseTest {
                 .goToLoginPage()
                 .loginToYemeksepeti("tumer.nura@gmail.com", "")
                 .verifyEmptyPassMessage("Lütfen şifrenizi giriniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -81,7 +78,6 @@ public class LoginTests extends BaseTest {
                 .goToLoginPage()
                 .loginToYemeksepeti("tumer.nuray@gmail.com", "")
                 .verifyEmptyPassMessage("Lütfen şifrenizi giriniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -97,7 +93,6 @@ public class LoginTests extends BaseTest {
                 .goToLoginPage()
                 .loginToYemeksepeti("tumer.nuray@gmail.com", "asd")
                 .verifyErrorMessage("Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -113,7 +108,6 @@ public class LoginTests extends BaseTest {
                 .goToLoginPage()
                 .loginToYemeksepeti("", "asd")
                 .verifyEmptyUserNameMessage("Lütfen kullanıcı adınızı/e-postanızı giriniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -130,7 +124,6 @@ public class LoginTests extends BaseTest {
                 .goToLoginPage()
                 .loginToYemeksepeti("tumer.nura@gmail.com", "12nT**12")
                 .verifyErrorMessage("Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -146,7 +139,6 @@ public class LoginTests extends BaseTest {
                 .goToLoginPage()
                 .loginToYemeksepeti("", "12nT**12")
                 .verifyEmptyUserNameMessage("Lütfen kullanıcı adınızı/e-postanızı giriniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -162,7 +154,6 @@ public class LoginTests extends BaseTest {
                 .goToLoginPage()
                 .loginToYemeksepeti("tumer.nuray", "12nT**12")
                 .verifyErrorMessage("Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz.");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -177,7 +168,6 @@ public class LoginTests extends BaseTest {
                 .goToYemeksepeti()
                 .goToLoginPage()
                 .loginToYemeksepeti("tumer.nuray@gmail.com", "12nT**12");
-        driver.manage().deleteAllCookies();
 
     }
 
@@ -192,7 +182,6 @@ public class LoginTests extends BaseTest {
                 .goToYemeksepeti()
                 .goToLoginPage()
                 .failScenario();
-        driver.manage().deleteAllCookies();
 
     }
 
